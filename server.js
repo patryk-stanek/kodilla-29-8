@@ -6,8 +6,7 @@ mongoose.Promise = global.Promise
 //     // useMongoClient: true
 //     useNewUrlParser: true
 // });
-mongoose.connect('mongodb+srv://larry:ragnarok7@cluster0-ehuzy.mongodb.net/test?retryWrites=true&w=majority', {
-    // useMongoClient: true
+mongoose.connect('mongodb+srv://larry:larry@test-unwls.mongodb.net/test?retryWrites=true&w=majority', {
     useNewUrlParser: true
 });
 mongoose.set('useFindAndModify', false)
