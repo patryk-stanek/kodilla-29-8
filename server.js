@@ -9,14 +9,23 @@ mongoose.Promise = global.Promise
 // mongoose.connect('mongodb+srv://larry:larry@test-unwls.mongodb.net/test?retryWrites=true&w=majority', {
 //     useNewUrlParser: true
 // });
-mongoose.connect('mongodb+srv://larry:larry@test-unwls.mongodb.net/test?retryWrites=true&w=majority')
-    .then(() => {
-        return server.start();
+// mongoose.connect('mongodb+srv://larry:larry@test-unwls.mongodb.net/test?retryWrites=true&w=majority')
+//     .then(() => {
+//         return server.start();
+//     })
+//     .catch(err => {
+//         console.error('App starting error:', err.stack);
+//         process.exit(1);
+//     });
+
+mongoose   
+    .connect('mongodb+srv://larry:larry@test-unwls.mongodb.net/test?retryWrites=true&w=majority', {
+        useNewUrlParser: true
     })
-    .catch(err => {
-        console.error('App starting error:', err.stack);
+    .catch((err) => {
+        console.log(err);
         process.exit(1);
-    });
+    })
 
 mongoose.set('useFindAndModify', false)
 
