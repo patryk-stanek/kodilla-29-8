@@ -30,7 +30,7 @@ mongoose.Promise = global.Promise
 //         process.exit(1);
 //     })
 
-mongoose.connect('http://127.0.0.1:27017/test')
+mongoose.connect('mongodb+srv://larry:larry@test-unwls.mongodb.net/test?retryWrites=true&w=majority')
   .then(() => {
     server.start();
   })
