@@ -30,14 +30,21 @@ mongoose.Promise = global.Promise
 //         process.exit(1);
 //     })
 
-mongoose.connect('mongodb+srv://larry:larry@test-unwls.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true})
-  .then(() => {
-    server.start();
-  })
-  .catch((err) => {
-    console.log('Error on start: ' + err.stack);
-    process.exit(1);
-  });
+// mongoose.connect('mongodb+srv://larry:larry@test-unwls.mongodb.net/test?retryWrites=true&w=majority', {
+//     useNewUrlParser: true
+// })
+//   .then(() => {
+//     server.start();
+//   })
+//   .catch((err) => {
+//     console.log('Error on start: ' + err.stack);
+//     process.exit(1);
+//   });
+
+mongoose.connect('mongodb+srv://larry:larry@test-unwls.mongodb.net/test?retryWrites=true&w=majority', () => {}, {useNewUrlParser: true})
+    .catch(err => {
+        console.log(err);
+    })
 
 mongoose.set('useFindAndModify', false)
 
