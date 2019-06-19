@@ -8,16 +8,16 @@ mongoose.Promise = global.Promise
 //     useNewUrlParser: true
 // });
 
-mongoose.connect('mongodb+srv://larry:larry@test-unwls.mongodb.net/test?retryWrites=true&w=majority', {
-    useNewUrlParser: true
-});
+// mongoose.connect('mongodb+srv://larry:larry@test-unwls.mongodb.net/test?retryWrites=true&w=majority', {
+//     useNewUrlParser: true
+// });
 
 // mongoose.connect('mongodb+srv://larry:larry@test-unwls.mongodb.net/test?retryWrites=true&w=majority')
 //     .then(() => {
 //         return server.start();
 //     })
 //     .catch(err => {
-//         console.error('App starting error:', err.stack);
+//         console.error('!ERROR', err.stack);
 //         process.exit(1);
 //     });
 
@@ -29,6 +29,15 @@ mongoose.connect('mongodb+srv://larry:larry@test-unwls.mongodb.net/test?retryWri
 //         console.log('!ERROR' + err);
 //         process.exit(1);
 //     })
+
+mongoose.connect('http://127.0.0.1:27017/test')
+  .then(() => {
+    server.start();
+  })
+  .catch((err) => {
+    console.log('Error on start: ' + err.stack);
+    process.exit(1);
+  });
 
 mongoose.set('useFindAndModify', false)
 
