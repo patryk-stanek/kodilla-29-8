@@ -32,6 +32,7 @@ mongoose.Promise = global.Promise
 
 mongoose.connect('mongodb+srv://larry:larry@test-unwls.mongodb.net/test?retryWrites=true&w=majority')
   .then(() => {
+    useNewUrlParser: true
     server.start();
   })
   .catch((err) => {
