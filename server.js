@@ -41,7 +41,7 @@ mongoose.Promise = global.Promise
 //     process.exit(1);
 //   });
 
-mongoose.connect('mongodb+srv://larry:larry@test-unwls.mongodb.net/test?retryWrites=true&w=majority', () => {}, {useNewUrlParser: true})
+mongoose.connect('mongodb+srv://larry:larry@test-unwls.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true})
     .catch(err => {
         console.log(err);
     })
