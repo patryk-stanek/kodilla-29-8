@@ -30,9 +30,8 @@ mongoose.Promise = global.Promise
 //         process.exit(1);
 //     })
 
-mongoose.connect('mongodb+srv://larry:larry@test-unwls.mongodb.net/test?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://larry:larry@test-unwls.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true})
   .then(() => {
-    useNewUrlParser: true
     server.start();
   })
   .catch((err) => {
