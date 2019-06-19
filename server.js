@@ -2,13 +2,16 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 mongoose.Promise = global.Promise
+
 // mongoose.connect('mongodb://localhost/nodeappdatabase', {
 //     // useMongoClient: true
 //     useNewUrlParser: true
 // });
-// mongoose.connect('mongodb+srv://larry:larry@test-unwls.mongodb.net/test?retryWrites=true&w=majority', {
-//     useNewUrlParser: true
-// });
+
+mongoose.connect('mongodb+srv://larry:larry@test-unwls.mongodb.net/test?retryWrites=true&w=majority', {
+    useNewUrlParser: true
+});
+
 // mongoose.connect('mongodb+srv://larry:larry@test-unwls.mongodb.net/test?retryWrites=true&w=majority')
 //     .then(() => {
 //         return server.start();
@@ -18,14 +21,14 @@ mongoose.Promise = global.Promise
 //         process.exit(1);
 //     });
 
-mongoose   
-    .connect('mongodb+srv://larry:larry@test-unwls.mongodb.net/test?retryWrites=true&w=majority', {
-        useNewUrlParser: true
-    })
-    .catch((err) => {
-        console.log(err);
-        process.exit(1);
-    })
+// mongoose   
+//     .connect('mongodb+srv://larry:larry@test-unwls.mongodb.net/test?retryWrites=true&w=majority', {
+//         useNewUrlParser: true
+//     })
+//     .catch((err) => {
+//         console.log('!ERROR' + err);
+//         process.exit(1);
+//     })
 
 mongoose.set('useFindAndModify', false)
 
